@@ -1,44 +1,21 @@
-import React from 'react';
-import {Button} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import {IState, IProps} from './types';
+import LoginScreen from './screens/LoginScreen/Login.screen';
+import RegistrationScreen from './screens/RegistrationScreen/Registration.screen';
 
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-  };
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-      <Button
-        title="Go to Jane's profile"
-        onPress={() => navigate('Profile', {name: 'Jane'})}
-      />
-    );
-  }
-}
-
-class ProfileScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome',
-  };
-  render() {
-    const {navigate} = this.props.navigation;
-    return (
-      <Button
-        title="Go  profile"
-        onPress={() => navigate('Home', {name: 'Jane'})}
-      />
-    );
-  }
-}
-
-const MainNavigator = createStackNavigator({
-  Home: {screen: HomeScreen},
-  Profile: {screen: ProfileScreen},
-});
+const MainNavigator = createStackNavigator(
+  {
+    Login: {screen: LoginScreen, navigationOptions: {title: 'Login'}},
+    Registration: {
+      screen: RegistrationScreen,
+      navigationOptions: {title: 'Registration'},
+    },
+  },
+  {
+    initialRouteName: 'Login',
+  },
+);
 
 const AppNavigator = createAppContainer(MainNavigator);
 
