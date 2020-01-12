@@ -10,13 +10,11 @@ const Login: React.FC<IProps> = props => {
 	function onLogin() {
 		props.firebase.auth
 			.signInWithEmailAndPassword(email, password)
-			.then(() => {})
+			.then(() => props.navigation.navigate("Home"))
 			.catch(error => {
 				setEmail("");
 				setPassword("");
 			});
-
-		props.navigation.navigate("Home");
 	}
 
 	return (
