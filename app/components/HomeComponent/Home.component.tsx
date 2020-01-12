@@ -1,8 +1,18 @@
+import _ from "lodash";
+import { YellowBox } from "react-native";
 import React, { useState } from "react";
 import { Text, View, StyleSheet, Image, SafeAreaView, Button } from "react-native";
 import ImagePicker from "react-native-image-picker";
 import * as firebase from "firebase/app";
 import "firebase/storage";
+
+YellowBox.ignoreWarnings(["Setting a timer"]);
+const _console = _.clone(console);
+console.warn = message => {
+	if (message.indexOf("Setting a timer") <= -1) {
+		_console.warn(message);
+	}
+};
 
 import { IProps } from "./types";
 
@@ -30,6 +40,7 @@ const Home: React.FC<IProps> = props => {
 	};
 
 	function pickImage() {
+		console.log("img");
 		ImagePicker.showImagePicker(options, response => {
 			// console.log("Response = ", response);
 			if (response.didCancel) {
