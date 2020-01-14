@@ -1,15 +1,13 @@
 import React from "react";
 
 import { FirebaseContext } from "../../firebase";
-import Home from "./Home.component";
-import { IProps } from "../../screens/loginScreen/types";
+import { Home } from "./Home.component";
+import { Props } from "screens/loginScreen/types";
 
-const HomeContainer: React.FC<IProps> = props => {
-	return (
-		<FirebaseContext.Consumer>
-			{(firebase: any) => <Home firebase={firebase} navigation={props.navigation} />}
-		</FirebaseContext.Consumer>
-	);
+export const HomeContainer: React.FC<Props> = (props) => {
+  return (
+    <FirebaseContext.Consumer>
+      {(firebase) => <Home firebase={firebase} navigation={props.navigation} />}
+    </FirebaseContext.Consumer>
+  );
 };
-
-export default HomeContainer;

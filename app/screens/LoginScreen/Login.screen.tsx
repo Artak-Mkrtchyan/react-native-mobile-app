@@ -1,16 +1,14 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
-import GlobalStyles from "../GlobalStyles";
+import { globalStyles } from "../GlobalStyles";
 
-import Login from "../../components/LoginComponent";
-import { IProps } from "./types";
+import { LoginContainer } from "components/LoginComponent";
+import { Props } from "./types";
 
-const LoginScreen: React.FC<IProps> = props => {
-	return (
-		<SafeAreaView style={GlobalStyles.AndroidSafeArea}>
-			<Login navigation={props.navigation} />
-		</SafeAreaView>
-	);
+export const LoginScreen: React.FC<Props> = (props) => {
+  return (
+    <SafeAreaView style={globalStyles.AndroidSafeArea}>
+      <LoginContainer navigation={props.navigation} />
+    </SafeAreaView>
+  );
 };
-
-export default LoginScreen;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, View, StyleSheet, TextInput, SafeAreaView } from "react-native";
-import { IProps } from "./types";
+import { Props } from "./types";
 
-const Registration: React.FC<IProps> = props => {
+export const Registration: React.FC<Props> = (props) => {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
@@ -17,13 +17,13 @@ const Registration: React.FC<IProps> = props => {
 			<View>
 				<TextInput
 					value={email}
-					onChangeText={username => setEmail(username)}
+					onChangeText={(username) => setEmail(username)}
 					placeholder={"email"}
 					style={styles.input}
 				/>
 				<TextInput
 					value={password}
-					onChangeText={password => setPassword(password)}
+					onChangeText={(password) => setPassword(password)}
 					placeholder={"Password"}
 					secureTextEntry={true}
 					style={styles.input}
@@ -64,5 +64,3 @@ const styles = StyleSheet.create({
 		height: 44
 	}
 });
-
-export default Registration;

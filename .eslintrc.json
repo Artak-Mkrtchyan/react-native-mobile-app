@@ -1,0 +1,44 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"react-native/react-native": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"eslint:recommended",
+		"airbnb",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018
+	},
+	"plugins": ["react", "@typescript-eslint", "react-native", "import"],
+	"rules": {
+		"import/no-default-export": 2,
+		"import/prefer-default-export": 0,
+		"react-native/no-unused-styles": 2,
+		"react-native/split-platform-components": 2,
+		"react-native/no-inline-styles": 2,
+		"react-native/no-raw-text": 2,
+		"react-native/no-single-element-style-arrays": 2,
+		"semi": ["error", "always"],
+		"quotes": ["error", "double"],
+		"no-duplicate-imports": 2,
+		"no-tabs": 0,
+		"no-unused-vars": 1,
+		"import/extensions": 0
+	}
+}

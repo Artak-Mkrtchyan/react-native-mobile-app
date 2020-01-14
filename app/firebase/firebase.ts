@@ -1,18 +1,19 @@
 import firebase from "firebase";
-import config from "./firebaseConfig";
+import { firebaseConfig } from "./firebaseConfig";
 
-require("firebase/app");
-require("firebase/firestore");
-class Firebase {
-	auth: firebase.auth.Auth;
-	db: firebase.firestore.Firestore;
-	firebaseInstance: firebase.app.App;
+import "firebase/app";
+import "firebase/firestore";
 
-	constructor() {
-		this.firebaseInstance = firebase.initializeApp(config);
-		this.auth = firebase.auth();
-		this.db = firebase.firestore();
-	}
+export class Firebase {
+  auth: firebase.auth.Auth;
+
+  db: firebase.firestore.Firestore;
+
+  firebaseInstance: firebase.app.App;
+
+  constructor() {
+    this.firebaseInstance = firebase.initializeApp(firebaseConfig);
+    this.auth = firebase.auth();
+    this.db = firebase.firestore();
+  }
 }
-
-export default Firebase;

@@ -1,5 +1,5 @@
-import {NavigationStackProp} from 'react-navigation-stack';
+import { NavigationStackProp } from "react-navigation-stack";
 
-export interface IProps {
-  navigation: NavigationStackProp<{userId: string}>;
+export interface Props {
+	navigation: NavigationStackProp<{ userId: string }>;
 }

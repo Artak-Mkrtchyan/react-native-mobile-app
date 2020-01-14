@@ -1,16 +1,14 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
-import GlobalStyles from "../GlobalStyles";
+import { globalStyles } from "../GlobalStyles";
 
-import Home from "../../components/HomeComponent";
-import { IProps } from "./types";
+import { HomeContainer } from "components/HomeComponent";
+import { Props } from "./types";
 
-const HomeScreen: React.FC<IProps> = props => {
-	return (
-		<SafeAreaView style={GlobalStyles.AndroidSafeArea}>
-			<Home navigation={props.navigation} />
-		</SafeAreaView>
-	);
+export const HomeScreen: React.FC<Props> = (props) => {
+  return (
+    <SafeAreaView style={globalStyles.AndroidSafeArea}>
+      <HomeContainer navigation={props.navigation} />
+    </SafeAreaView>
+  );
 };
-
-export default HomeScreen;

@@ -48,3 +48,7 @@ android/app/libs
 android/keystores/debug.keystore
 
 .jest
+
+ios/Pods
+
+app/firebase/firebaseConfig.ts
