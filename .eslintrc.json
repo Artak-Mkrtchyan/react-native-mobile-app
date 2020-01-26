@@ -42,6 +42,10 @@
     "no-duplicate-imports": 2,
     "no-tabs": 0,
     "no-unused-vars": 1,
-    "import/extensions": 0
+    "import/extensions": 0,
+    "import/first": 2,
+    "import/newline-after-import": 2,
+    "import/no-duplicates": 2,
+    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }]
   }
 }
